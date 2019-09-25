@@ -36,6 +36,8 @@ class MainActivity : AppCompatActivity() {
     // Contains all the views
     private lateinit var binding: ActivityMainBinding
 
+    private lateinit var  dessertTimer: DessertTimer
+
     /** Dessert Data **/
 
     /**
@@ -66,6 +68,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        dessertTimer = DessertTimer()
+
         Timber.i("onCreate Called")
 
 //        Log.i("MainActivity", "onCreate Called")
@@ -87,6 +91,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        dessertTimer.startTimer()
         Timber.i("onStart Called")
 //        Log.i("MainActivity", "onStart Called")
     }
@@ -103,6 +108,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
+        dessertTimer.stopTimer()
         Timber.i("onStop Called")
     }
 
