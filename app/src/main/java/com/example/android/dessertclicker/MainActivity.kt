@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        dessertTimer = DessertTimer()
+        dessertTimer = DessertTimer(this.lifecycle)
 
         Timber.i("onCreate Called")
 
@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        dessertTimer.startTimer()
+//        dessertTimer.startTimer()
         Timber.i("onStart Called")
 //        Log.i("MainActivity", "onStart Called")
     }
@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        dessertTimer.stopTimer()
+//        dessertTimer.stopTimer()
         Timber.i("onStop Called")
     }
 
